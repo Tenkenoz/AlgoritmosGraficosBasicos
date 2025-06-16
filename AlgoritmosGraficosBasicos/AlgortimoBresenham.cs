@@ -16,7 +16,7 @@ namespace AlgoritmosGraficosBasicos
             int deltaY = Math.Abs(y2 - y1);
             int auxX = x1;
             int auxY = y1;
-            float m = Math.Abs((float)deltaY / deltaX);
+            float m = deltaX == 0 ? float.MaxValue : Math.Abs((float)deltaY / deltaX); // evita división por cero
             float p = 0;
 
             int incX = x2 >= x1 ? 1 : -1;
@@ -46,7 +46,7 @@ namespace AlgoritmosGraficosBasicos
                     Task.Delay(1).Wait();
                 }
             }
-            else if (m > 0 && m <= 1)
+            else
             {
                 p = 2 * deltaY - deltaX;
 
@@ -71,8 +71,12 @@ namespace AlgoritmosGraficosBasicos
                 }
             }
 
+            GraficarPixel(picCanvas, x2, y2);
+            EscribirCoordenadas(x2, y2);
+
             MostrarCoordenadas(coordenadas);
         }
+
 
     }
 }

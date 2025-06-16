@@ -20,6 +20,7 @@ namespace AlgoritmosGraficosBasicos
                 GraficarPixel(picCanvas, x1, y1);
                 EscribirCoordenadas(x1, y1);
                 MostrarCoordenadas(coordenadas);
+
                 return;
             }
 
